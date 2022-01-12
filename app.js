@@ -26,7 +26,7 @@ const months = [
   const deadline = document.querySelector('.deadline');
   const stuff = document.querySelectorAll('.deadline-format h4');
   
-  let futureDate = new Date(2022, 0, 11, 21, 00, 0);
+  let futureDate = new Date(2022, 0, 18, 9, 30, 0);
 
   const year = futureDate.getFullYear();
   const hours = futureDate.getHours();

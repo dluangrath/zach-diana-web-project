@@ -1,4 +1,3 @@
-// Define vars
 const months = [
     'January',
     'February',
@@ -27,7 +26,6 @@ const months = [
   const deadline = document.querySelector('.deadline');
   const format = document.querySelectorAll('.deadline-format h4');
   
-
   let futureDate = new Date(2022, 0, 11, 21, 00, 0);
 
   const year = futureDate.getFullYear();
@@ -36,13 +34,19 @@ const months = [
 
   let month = futureDate.getMonth(); 
   month = months[month];
-
+  
   const date = futureDate.getDate();
 
-  let day = futureDate.getDay();
-  day = weekdays[weekday];
-
-
-  giveaway.textContent = `Deadline is on ${date} ${month} ${year} ${hours}:${minutes}pm`;
-
+  const weekday = weekdays[futureDate.getDay()];
   
+  giveaway.textContent = `deadline is on ${weekday}, ${date} ${month} ${year} ${hours}:${minutes}pm`;
+
+  // future time in MS 
+  const futureTime = futureDate.getTime();
+  function getRemainingTime() {
+    const today = new Date().getTime();
+  }
+
+
+
+  getRemainingTime();

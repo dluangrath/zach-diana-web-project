@@ -25,8 +25,19 @@ const months = [
   const giveaway = document.querySelector('.giveaway');
   const deadline = document.querySelector('.deadline');
   const stuff = document.querySelectorAll('.deadline-format h4');
+
   
-  let futureDate = new Date(2022, 0, 18, 9, 30, 0);
+
+  // let futureDate = new Date(2022, 0, 14, 7, 30, 0);
+//   class Futuretime {
+    
+// }
+
+  function newDate ()
+
+  let futureDate = new Date(Date.UTC(2022, 0, 14, 19, 0, 0));
+  let options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+
 
   const year = futureDate.getFullYear();
   const hours = futureDate.getHours();

@@ -77,7 +77,11 @@ const months = [
 
     stuff.forEach(function(item, index) {
       item.innerHTML = format(values[index]);
-    })
+    });
+    if (t < 0) {
+      clearInterval(countdown);
+      deadline.innerHTML = `<h4 class="expired">Your assignment is due. Would you like to turn it in?</h4>`;
+    }
   }
 
   // countdown

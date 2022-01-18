@@ -177,14 +177,14 @@ main {
 Countdown Timer
 ===============
 */
-.gift-img {
+.dealine-img {
   margin-bottom: 2rem;
 }
-.gift-info h3 {
+.deadline-info h3 {
   text-transform: uppercase;
   color: var(--clr-primary-3);
 }
-.gift-info p {
+.deadline-info p {
   color: var(--clr-grey-6);
 }
 .date {
@@ -199,11 +199,11 @@ Countdown Timer
     gap: 3rem;
     width: 95vw;
   }
-  .gift-img {
+  .deadline-img {
     margin-bottom: 0;
   }
 }
-.gift-info p {
+.deadline-info p {
   margin: 2rem 0;
 }
 .deadline {

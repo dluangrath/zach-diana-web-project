@@ -38,7 +38,7 @@ const months = [
   // function newDate(futureDate) {
   
   // let options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-  let futureDate = new Date(Date.UTC(2022, 0, 18, 19, 0, 0));
+  let futureDate = new Date(Date.UTC(2022, 6, 4, 20, 0, 0));
   const year = futureDate.getFullYear();
   const hours = futureDate.getHours();
   const minutes = futureDate.getMinutes();
@@ -50,8 +50,6 @@ const months = [
 
   const weekday = weekdays[futureDate.getDay()];
  
-  
-
   
   deadlineDate.textContent = `deadline is on ${weekday}, ${date} ${month} ${year} ${hours}:${minutes}pm`;
 
@@ -67,26 +65,28 @@ const months = [
   // 1hr = 60m
   // 1d = 24hr
   
-  // values in miliseconds
-  let miliseconds = class {
-
-      constructor() {
-        this.oneDay = 24 * 60 * 60 * 1000;
-        this.oneHour = 60 * 60 * 1000;
-        this.oneMinute = 60 * 1000;
+  // values in milliseconds
+  class Time {
+    static oneMinute = 60 * 1000;
+    static oneDay = 24 * 60 * 60 * 1000;
+    static oneHour = 60 * 60 * 1000;
+     
+        constructor(t) {
+          this.days = t / Time.oneDay;
+          this.days = Math.floor(this.days);
+          this.hours = Math.floor((t % Time.oneDay) / Time.oneHour);
+          this.minutes = Math.floor((t % Time.oneHour) / Time.oneMinute);
+          this.seconds = Math.floor((t % Time.oneMinute) / 1000);
       }
 
-      let days = t / this.oneDay;
-      days = Math.floor(days);
-      let hours = Math.floor((t % this.oneDay) / this.oneHour);
-      let minutes = Math.floor((t % this.oneHour) / this.oneMinute);
-      let seconds = Math.floor((t % this.oneMinute) / 1000);
-    // const oneDay = 24 * 60 * 60 * 1000;
-    // const oneHour = 60 * 60 * 1000;
-    // const oneMinute = 60 * 1000;
-};
+      array = () => 
+        [this.days, this.hours, this.minutes, this.seconds] 
+    };
 
-console.log(miliseconds);
+// const oneDay = 24 * 60 * 60 * 1000;
+// const oneHour = 60 * 60 * 1000;
+// const oneMinute = 60 * 1000;
+
 
     // calculate all values
   
@@ -97,9 +97,11 @@ console.log(miliseconds);
     // let seconds = Math.floor((t % oneMinute) / 1000);
 
     // values array
-    const values = [days, hours, minutes, seconds];
-    
-    function format(item) {
+  
+    const values = new Time(t).array();
+
+    //fix this!!! 
+    function format(item, futureDate) {
       if (item < 10) {
         return item = `0${item}`
       }

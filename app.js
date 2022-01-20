@@ -26,15 +26,7 @@ const months = [
   const deadline = document.querySelector('.deadline');
   const stuff = document.querySelectorAll('.deadline-format h4');
 
-  // let futureDate = new Date(2022, 0, 14, 7, 30, 0);
-//   class Futuretime {
-    
-// }
-
-  // function newDate(futureDate) {
-  
-  // let options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-  let futureDate = new Date(Date.UTC(2022, 0, 20, 29, 0, 0));
+  let futureDate = new Date(Date.UTC(2022, 0, 20, 9, 0, 0));
   const year = futureDate.getFullYear();
   const hours = futureDate.getHours();
   const minutes = futureDate.getMinutes();
@@ -55,7 +47,7 @@ const months = [
  if(currentMinutes < 10) currentMinutes = '0'+currentMinutes;
 
 
-  deadlineDate.textContent = `deadline is on ${weekday}, ${date} ${month} ${year} ${currentHours}:${currentMinutes}`;
+  deadlineDate.textContent = `deadline is on ${weekday}, ${date} ${month} ${year} ${currentHours}:${currentMinutes}pm`;
 
   // future time in MS 
   const futureTime = futureDate.getTime();
@@ -86,19 +78,6 @@ const months = [
       array = () => 
         [this.days, this.hours, this.minutes, this.seconds] 
     };
-
-// const oneDay = 24 * 60 * 60 * 1000;
-// const oneHour = 60 * 60 * 1000;
-// const oneMinute = 60 * 1000;
-
-
-    // calculate all values
-  
-    // let days = t / oneDay;
-    // days = Math.floor(days);
-    // let hours = Math.floor((t % oneDay) / oneHour);
-    // let minutes = Math.floor((t % oneHour) / oneMinute);
-    // let seconds = Math.floor((t % oneMinute) / 1000);
 
     // values array
     const values = new Time(t).array();

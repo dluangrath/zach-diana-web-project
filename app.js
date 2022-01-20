@@ -26,7 +26,7 @@ const months = [
   const deadline = document.querySelector('.deadline');
   const stuff = document.querySelectorAll('.deadline-format h4');
 
-  let futureDate = new Date(Date.UTC(2022, 0, 20, 9, 0, 0));
+  let futureDate = new Date(Date.UTC(2022, 0, 20, 30, 0, 0));
   const year = futureDate.getFullYear();
   const hours = futureDate.getHours();
   const minutes = futureDate.getMinutes();
@@ -47,7 +47,7 @@ const months = [
  if(currentMinutes < 10) currentMinutes = '0'+currentMinutes;
 
 
-  deadlineDate.textContent = `deadline is on ${weekday}, ${date} ${month} ${year} ${currentHours}:${currentMinutes}pm`;
+  deadlineDate.textContent = `deadline is on ${weekday}, ${date} ${month} ${year} ${currentHours}:${currentMinutes}`;
 
   // future time in MS 
   const futureTime = futureDate.getTime();

@@ -26,19 +26,15 @@ const months = [
   const deadline = document.querySelector('.deadline');
   const stuff = document.querySelectorAll('.deadline-format h4');
 
-  
-
   // let futureDate = new Date(2022, 0, 14, 7, 30, 0);
 //   class Futuretime {
     
 // }
 
-  
-
   // function newDate(futureDate) {
   
   // let options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-  let futureDate = new Date(Date.UTC(2022, 6, 4, 20, 0, 0));
+  let futureDate = new Date(Date.UTC(2022, 0, 20, 29, 0, 0));
   const year = futureDate.getFullYear();
   const hours = futureDate.getHours();
   const minutes = futureDate.getMinutes();
@@ -49,9 +45,17 @@ const months = [
   const date = futureDate.getDate();
 
   const weekday = weekdays[futureDate.getDay()];
- 
-  
-  deadlineDate.textContent = `deadline is on ${weekday}, ${date} ${month} ${year} ${hours}:${minutes}pm`;
+
+ let currentTime = futureDate; 
+
+ let currentHours = currentTime.getHours();
+ if(currentHours < 10) currentHours = '0'+currentHours;
+
+ let currentMinutes = currentTime.getMinutes();
+ if(currentMinutes < 10) currentMinutes = '0'+currentMinutes;
+
+
+  deadlineDate.textContent = `deadline is on ${weekday}, ${date} ${month} ${year} ${currentHours}:${currentMinutes}`;
 
   // future time in MS 
   const futureTime = futureDate.getTime();
@@ -97,11 +101,9 @@ const months = [
     // let seconds = Math.floor((t % oneMinute) / 1000);
 
     // values array
-  
     const values = new Time(t).array();
 
-    //fix this!!! 
-    function format(item, futureDate) {
+    function format(item) {
       if (item < 10) {
         return item = `0${item}`
       }

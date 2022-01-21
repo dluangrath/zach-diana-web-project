@@ -47,7 +47,7 @@ const months = [
  if(currentMinutes < 10) currentMinutes = '0'+currentMinutes;
 
 
-  deadlineDate.textContent = `deadline is on ${weekday}, ${date} ${month} ${year} ${currentHours}:${currentMinutes}`;
+  deadlineDate.textContent = `due date is on ${weekday}, ${date} ${month} ${year} At ${currentHours}:${currentMinutes}`;
 
   // future time in MS 
   const futureTime = futureDate.getTime();
